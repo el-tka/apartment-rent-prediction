@@ -1,55 +1,117 @@
+2026-11-15 13:00:08.285 | INFO     | __main__:main:24 - Running the application...
+2026-11-15 13:00:08.307 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db_v1.joblib
+2026-11-15 13:00:08.308 | WARNING  | model.model_service:load_model:67 - Model not found at model\models\best_boosting_model_db_v1.joblib.Starting training best_boosting_model_db_v1.joblib
+2026-11-15 13:00:08.308 | INFO     | model.pipeline.model:build_model:50 - Starting building the model pipeline
+2026-11-15 13:00:08.308 | INFO     | model.pipeline.preparation:prepare_data:38 - Starting preprocessing the data
+2026-11-15 13:00:08.308 | INFO     | model.pipeline.collection:load_data_from_db:26 - Loading data from database table
+2026-11-15 13:00:08.374 | INFO     | model.pipeline.preparation:_encode_cat_cols:61 - Encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
+2026-11-15 13:00:08.401 | INFO     | model.pipeline.preparation:_parse_garden_col:78 - Parsing garden column
+2026-11-15 13:00:08.407 | INFO     | model.pipeline.preparation:_col_check:96 - Checking for missing columns
+2026-11-15 13:00:08.408 | INFO     | model.pipeline.model:_get_x_y:85 - Extracting features and target variable. 
+ Features: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes'] 
+ Target: rent
+2026-11-15 13:00:08.412 | INFO     | model.pipeline.model:_split_train_test:115 - Splitting data into train and test sets.
+2026-11-15 13:00:08.430 | INFO     | model.pipeline.model:_search_best_model:147 - Starting best model search using cross-validation
+2026-11-15 13:00:31.366 | INFO     | model.pipeline.model:_tune_optuna:266 - Starting hyperparameter tuning for XGBoost using Optuna
+2026-11-15 13:00:31.369 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:34.314 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:35.149 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:38.156 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:41.389 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:42.908 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:44.625 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:47.724 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:48.269 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:55.562 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:57.388 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:00:57.388 | INFO     | model.pipeline.model:_train_best_model:298 - Training the best model: XGBRegressor
+2026-11-15 13:00:57.988 | INFO     | model.pipeline.model:_evaluate_model:319 - Evaluating the model: XGBRegressor
+2026-11-15 13:00:58.006 | INFO     | model.pipeline.model:_save_model:360 - Saving the model: XGBRegressor
+2026-11-15 13:00:58.039 | INFO     | model.pipeline.model:_save_model:381 - Model and results saved successfully to the directory: model\models and model\models\models_results
+2026-11-15 13:00:58.062 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db_v1.joblib
+2026-11-15 13:00:58.082 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
+2026-11-15 13:00:58.082 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
+2026-11-15 13:00:58.091 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
+2026-11-15 13:05:06.916 | INFO     | __main__:main:24 - Building the model...
+2026-11-15 13:05:06.919 | INFO     | model.model_builder:train_model:45 - Starting training best_boosting_model_db_v1.joblib
+2026-11-15 13:05:06.920 | INFO     | model.pipeline.model:build_model:50 - Starting building the model pipeline
+2026-11-15 13:05:06.921 | INFO     | model.pipeline.preparation:prepare_data:38 - Starting preprocessing the data
+2026-11-15 13:05:06.921 | INFO     | model.pipeline.collection:load_data_from_db:26 - Loading data from database table
+2026-11-15 13:05:06.971 | INFO     | model.pipeline.preparation:_encode_cat_cols:61 - Encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
+2026-11-15 13:05:06.982 | INFO     | model.pipeline.preparation:_parse_garden_col:78 - Parsing garden column
+2026-11-15 13:05:06.987 | INFO     | model.pipeline.preparation:_col_check:96 - Checking for missing columns
+2026-11-15 13:05:06.988 | INFO     | model.pipeline.model:_get_x_y:85 - Extracting features and target variable. 
+ Features: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes'] 
+ Target: rent
+2026-11-15 13:05:06.992 | INFO     | model.pipeline.model:_split_train_test:115 - Splitting data into train and test sets.
+2026-11-15 13:05:07.001 | INFO     | model.pipeline.model:_search_best_model:147 - Starting best model search using cross-validation
+2026-11-15 13:05:29.226 | INFO     | model.pipeline.model:_tune_optuna:266 - Starting hyperparameter tuning for XGBoost using Optuna
+2026-11-15 13:05:29.229 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:32.144 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:32.874 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:35.691 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:38.852 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:40.586 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:42.152 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:45.332 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:45.876 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:53.225 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:55.030 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:05:55.033 | INFO     | model.pipeline.model:_train_best_model:298 - Training the best model: XGBRegressor
+2026-11-15 13:05:55.629 | INFO     | model.pipeline.model:_evaluate_model:319 - Evaluating the model: XGBRegressor
+2026-11-15 13:05:55.648 | INFO     | model.pipeline.model:_save_model:360 - Saving the model: XGBRegressor
+2026-11-15 13:05:55.673 | INFO     | model.pipeline.model:_save_model:381 - Model and results saved successfully to the directory: model\models and model\models\models_results
+2026-11-15 13:32:57.089 | INFO     | __main__:main:24 - Running the application...
+2026-11-15 13:32:57.091 | INFO     | model.model_inference:load_model:64 - Checking if model exists at model\models\best_boosting_model_db_v1.joblib
+2026-11-15 13:32:57.091 | INFO     | model.model_inference:load_model:77 - Loading model from model\models\best_boosting_model_db_v1.joblib
+2026-11-15 13:32:58.412 | INFO     | model.model_inference:load_model:87 - Model loaded: XGBoost
+2026-11-15 13:32:58.413 | INFO     | model.model_inference:predict:107 - Making predictions using the model: XGBoost
+2026-11-15 13:32:58.417 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
+2026-11-15 13:34:14.411 | INFO     | __main__:main:24 - Running the application...
+2026-11-15 13:34:14.412 | INFO     | model.model_inference:load_model:64 - Checking if model exists at model\models\best_boosting_model_db_v1.joblib
+2026-11-15 13:34:14.412 | ERROR    | model.model_inference:load_model:70 - Model not found at model\models\best_boosting_model_db_v1.joblib.
+2026-11-15 13:34:14.412 | ERROR    | __main__:<module>:44 - An error has been caught in function '<module>', process 'MainProcess' (105280), thread 'MainThread' (95752):
+Traceback (most recent call last):
 
-2026-11-12 12:30:50.061 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 12:30:50.062 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 12:30:50.062 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 12:30:50.077 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 12:30:50.077 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 12:30:50.082 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 12:42:26.427 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 12:42:26.428 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 12:42:26.428 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 12:42:26.446 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 12:42:26.446 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 12:42:26.452 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 12:44:57.721 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 12:44:57.723 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 12:44:57.723 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 12:44:57.738 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 12:44:57.738 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 12:44:57.743 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 12:46:19.828 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 12:46:19.830 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 12:46:19.830 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 12:46:19.849 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 12:46:19.849 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 12:46:19.854 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 13:05:15.855 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 13:05:15.856 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 13:05:15.856 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 13:05:15.873 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 13:05:15.873 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 13:05:15.878 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 13:07:52.277 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 13:07:52.278 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 13:07:52.278 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 13:07:52.299 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 13:07:52.299 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 13:07:52.305 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 13:10:19.314 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 13:10:19.315 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 13:10:19.316 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 13:10:19.335 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 13:10:19.335 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 13:10:19.339 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 13:14:31.882 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 13:14:31.884 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 13:14:31.884 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 13:14:31.898 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 13:14:31.898 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 13:14:31.902 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
-2026-11-12 13:17:20.034 | INFO     | __main__:main:24 - Running the application...
-2026-11-12 13:17:20.035 | INFO     | model.model_service:load_model:61 - Checking if model exists at model\models\best_boosting_model_db.joblib
-2026-11-12 13:17:20.036 | INFO     | model.model_service:load_model:75 - Loading model from model\models\best_boosting_model_db.joblib
-2026-11-12 13:17:20.053 | INFO     | model.model_service:load_model:85 - Model loaded: XGBoost
-2026-11-12 13:17:20.053 | INFO     | model.model_service:predict:105 - Making predictions using the model: XGBoost
-2026-11-12 13:17:20.058 | INFO     | __main__:main:40 - Predicted rent price: 1912.02734375
+> File "C:\Users\elena\OneDrive\Documents\ML_course\ml_project\src\runner_inference.py", line 44, in <module>
+    main()
+    └ <function main at 0x0000029CD35DD3A0>
+
+  File "C:\Users\elena\OneDrive\Documents\ML_course\ml_project\src\runner_inference.py", line 26, in main
+    ml_svc.load_model()
+    │      └ <function ModelInferenceService.load_model at 0x0000029CF4746DE0>
+    └ <model.model_inference.ModelInferenceService object at 0x0000029CF6C27DA0>
+
+  File "C:\Users\elena\OneDrive\Documents\ML_course\ml_project\src\model\model_inference.py", line 73, in load_model
+    raise FileNotFoundError('Model file does not exist!')
+
+FileNotFoundError: Model file does not exist!
+2026-11-15 13:35:44.090 | INFO     | __main__:main:24 - Building the model...
+2026-11-15 13:35:44.091 | INFO     | model.model_builder:train_model:45 - Starting training best_boosting_model_db_v1.joblib
+2026-11-15 13:35:44.092 | INFO     | model.pipeline.model:build_model:50 - Starting building the model pipeline
+2026-11-15 13:35:44.092 | INFO     | model.pipeline.preparation:prepare_data:38 - Starting preprocessing the data
+2026-11-15 13:35:44.093 | INFO     | model.pipeline.collection:load_data_from_db:26 - Loading data from database table
+2026-11-15 13:35:44.126 | INFO     | model.pipeline.preparation:_encode_cat_cols:61 - Encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
+2026-11-15 13:35:44.134 | INFO     | model.pipeline.preparation:_parse_garden_col:78 - Parsing garden column
+2026-11-15 13:35:44.139 | INFO     | model.pipeline.preparation:_col_check:96 - Checking for missing columns
+2026-11-15 13:35:44.139 | INFO     | model.pipeline.model:_get_x_y:85 - Extracting features and target variable. 
+ Features: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes'] 
+ Target: rent
+2026-11-15 13:35:44.142 | INFO     | model.pipeline.model:_split_train_test:115 - Splitting data into train and test sets.
+2026-11-15 13:35:44.149 | INFO     | model.pipeline.model:_search_best_model:147 - Starting best model search using cross-validation
+2026-11-15 13:35:54.876 | INFO     | model.pipeline.model:_tune_optuna:266 - Starting hyperparameter tuning for XGBoost using Optuna
+2026-11-15 13:35:54.878 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:35:56.528 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:35:56.953 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:35:58.277 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:35:59.742 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:00.381 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:01.117 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:02.396 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:02.609 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:05.622 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:06.417 | INFO     | model.pipeline.model:_suggest_model:186 - Suggesting model: XGBoost with hyperparameters from Optuna trial
+2026-11-15 13:36:06.419 | INFO     | model.pipeline.model:_train_best_model:298 - Training the best model: XGBRegressor
+2026-11-15 13:36:06.646 | INFO     | model.pipeline.model:_evaluate_model:319 - Evaluating the model: XGBRegressor
+2026-11-15 13:36:06.654 | INFO     | model.pipeline.model:_save_model:360 - Saving the model: XGBRegressor
+2026-11-15 13:36:06.667 | INFO     | model.pipeline.model:_save_model:381 - Model and results saved successfully to the directory: model\models and model\models\models_results

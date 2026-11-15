@@ -2,9 +2,9 @@
 This module provides functionality for managing the ML model,
 including loading the model and making predictions.
 
-It contains the ModelService class, which handles loading and
+It contains the ModelInferenceService class, which handles loading and
 using the pre-trained model. The class offers methods
-to load the model from a file, building it if it doesn't exist,
+to load the model from a file, checking if it does exist,
 and making predictions using the loaded model.
 """
 
@@ -16,16 +16,15 @@ import pandas as pd
 from loguru import logger
 
 from config import model_settings
-from model.pipeline.model import build_model
 
 
-class ModelService:
+class ModelInferenceService:
     """
     A service class for managing the ML model, including loading and
     making predictions.
 
     This class provides functionality to load a pre-trained model from a
-    specified path, build the model if it doesn't exist, and make predictions
+    specified path, check if it exists, and make predictions
     using the loaded model.
 
     Attributes:
@@ -50,25 +49,28 @@ class ModelService:
             f'{model_settings.model_output_path}/{model_settings.model_name}'
         ),
     ) -> None:
-        """Initializes the ModelService instance."""
+        """Initializes the ModelInferenceService instance."""
         self.model = None
         self.model_path = Path(model_path)
         self.features = None
         self.model_name = None
 
     def load_model(self) -> None:
-        """Loads the model and metadata, building it if it doesn't exist."""
+        """Loads the model and metadata, checks if the model exists.
+        
+           Raises:
+                FileNotFoundError: if the model file doesn't exist at the 
+                                   specified directory"""
         logger.info(
             f'Checking if model exists at {self.model_path}',
             )
                      
         # 1. Check if model exists
         if not self.model_path.exists():
-            logger.warning(
+            logger.error(
                 f'Model not found at {self.model_path}.'
-                f'Starting training {model_settings.model_name}',
                 )
-            build_model()
+            raise FileNotFoundError('Model file does not exist!')
 
         # 2. Load artifact
         with open(self.model_path, 'rb') as model_file:

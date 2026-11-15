@@ -7,7 +7,7 @@ performs predictions on sample input data and logs the results.
 """
 from loguru import logger
 
-from model.model_service import ModelService
+from model.model_inference import ModelInferenceService
 
 
 @logger.catch
@@ -15,14 +15,14 @@ def main() -> None:
     """
     Main function to run the application.
 
-    It initializes the ModelService, loads the trained model,
+    It initializes the ModelInferenceService, loads the trained model,
     performs predictions on sample input data, and logs the results.
 
     Returns:
         None
     """
     logger.info("Running the application...")
-    ml_svc = ModelService()
+    ml_svc = ModelInferenceService()
     ml_svc.load_model()
 
     input_data = {
